@@ -10,6 +10,8 @@ import Home from './pages/home/Home.jsx'
 import Discover from './pages/discover/Discover.jsx'
 import Order from './pages/order/Order.jsx'
 import Mine from './pages/mine/Mine.jsx'
+import Nav from './common/nav/Nav.jsx'
+
 
 export default class App extends Component{
     render(){
@@ -17,14 +19,14 @@ export default class App extends Component{
             <Router>
                 <div className="app">
                 
-                    
                     <Route exact path="/" component={Home}/>
                     <Route path="/discover" component={Discover}/>
                     <Route path="/order" component={Order}/>
                     <Route path="/mine" component={Mine}/>
 
-                  
+                    <Nav></Nav>
                 </div>
+                
             </Router>
         )
     }
