@@ -1,0 +1,23 @@
+#home{  
+    .content-nav{
+     border-top: 1px solid #999999;  
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;  
+    height:49px;
+    // padding-top: 1.2vw;
+    background-color: #fff;
+    z-index: 100;
+   display: flex;
+        a{
+            flex: 1;
+            text-align: center;
+            line-height: 49px;
+        }
+  
+
+    }
+
+
+}
