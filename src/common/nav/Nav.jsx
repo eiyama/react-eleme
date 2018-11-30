@@ -9,7 +9,7 @@ export default class Nav extends Component{
 
 
                     <nav className="content-nav" >
-                        <NavLink to="/">
+                        <NavLink to="/"  exact>
                             <span className="iconfont icon-eliaomo"></span>
                             <span>首页</span>
                         </NavLink>

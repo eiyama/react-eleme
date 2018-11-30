@@ -23,10 +23,14 @@
             font-size: 12px;
             
         }
+        &.active{
+            color:#53cbec
+           }
        
        }
     
    }
-   .content-nav a:hover{
-       color:#53cbec;
-   }
+  
+//    .content-nav a:hover{
+//        color:#53cbec;
+//    }

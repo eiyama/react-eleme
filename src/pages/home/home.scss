@@ -1,7 +1,4 @@
 #home{  
-  
-  .wrap{
-    position: relative;
     .title{
       height: 38px;
       color: #fff;
@@ -23,6 +20,20 @@
       }
    }
 
+   .wrap{
+    position: relative;
+   li{
+    position: relative;
+    border-bottom: .013333rem solid #eee;
+    border-bottom: .133333vw solid #eee;
+    background-color: #fff;
+    color: #666;
+    padding: .4rem 0;
+    padding: 4vw 0;
+    list-style: none;
+    font-size: .293333rem;
+    line-height: normal;
+   }
 
   }
    
