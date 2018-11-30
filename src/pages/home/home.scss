@@ -1,5 +1,8 @@
 #home{  
-   .title{
+  
+  .wrap{
+    // position: relative;
+    .title{
      height: 76px;
      position: absolute;
      top: 0;left: 0;
@@ -12,5 +15,7 @@
       background: #0085ff;
       margin-top: 76px;
    }
+  }
+   
 
 }
