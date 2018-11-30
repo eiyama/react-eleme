@@ -11,8 +11,22 @@
        a{
            flex: 1;
            text-align: center;
-           line-height: 49px;
+           display: flex;
+           flex-direction: column;
+          span{
+            flex: 1
+          }  
+        span:first-of-type{
+            font-size: 20px;
+        }
+        span:last-of-type{
+            font-size: 12px;
+            
+        }
+       
        }
- 
-
+    
+   }
+   .content-nav a:hover{
+       color:#53cbec;
    }

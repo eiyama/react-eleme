@@ -117,5 +117,5 @@
   "devDependencies": {
     "node-sass": "^4.10.0"
   },
-  "proxy": "https://segmentfault.com"
+  "proxy":"https://h5.ele.me"
 }
