@@ -12,7 +12,6 @@ export default class Home extends Component{
          
                 <div className="wrap">
                     <h1>首页</h1>
-                    <h2>美食</h2>
                 </div>
             </div>
         )
