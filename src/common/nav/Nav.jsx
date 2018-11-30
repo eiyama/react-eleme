@@ -6,8 +6,6 @@ import './Nav.scss'
 export default class Nav extends Component{
     render(){
         return (
-
-
                     <nav className="content-nav" >
                         <NavLink to="/"  exact>
                             <span className="iconfont icon-eliaomo"></span>
@@ -27,6 +25,7 @@ export default class Nav extends Component{
                         </NavLink>
 
                     </nav>
+
         )
 
 

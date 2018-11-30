@@ -4,23 +4,19 @@ import './Header.scss'
 
 
 export default class Header extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
            btn: '<',
+           title: ''
         }
     }
     render(){
-        console.log(this.props);
         let {btn} = this.state;
         return (
             <div className="header">
-            {/* onClick={()=>{
-                      console.log(1)
-                      this.props.history.goBack();
-                }} */}
-                  <span className="btn" >{btn}</span>
-                  <span className="title">头部</span>                  
+                  <span className="btn">{btn}</span>
+                  <span className="title">{this.props.title}</span>                  
             </div>
         )
     }
