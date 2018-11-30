@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react'
 import API from '../../api'
 import 'whatwg-fetch'
@@ -10,11 +9,11 @@ export default class Home extends Component{
         super();
         this.state={
             navList:[],
-            channelsData:[]
         }
     }
 
     render(){
+        let {navList} = this.state;
         return (
             <div className="page" id="home">
                 <div className="wrap">
@@ -36,12 +35,23 @@ export default class Home extends Component{
                     <div className="nav-container">
                         <div className="nav-wrap" >
                             <div className="nav-wrap-item active" >
-                                <a href="">
-                                    <div className="banner" >
-                                        <img src=""/>
-                                    </div>
-                                    <span></span>
-                                </a>
+                            {
+                                
+                                (function(){
+                                    let lis = [];
+                                    for(var i=0;i<navList.length;i++){
+                                        if(i<10){
+                                            lis.push(<a href="javascript:;">
+                                                        <img src=""/>
+                                                        <span className="name" >{navList[i].name}</span>
+                                                    </a>);
+                                        }
+                                    }
+                                    return lis;
+                                })()
+                                
+                            }
+                                
                             </div>
                         </div>
                     </div>
@@ -53,47 +63,19 @@ export default class Home extends Component{
     componentDidMount(){
 
         //请求nav轮播图
-        // fetch(API.NAV_API+"?latitude="+31.230378+"&longitude="+121.473658+
-        // "&templates[]=main_template&templates[]=favourable_template&templates[]=svip_template")
-       
-        fetch(API.NAV_API,{
-                latitude:"31.230378",
-                longitude:"121.473658",
-                "templates[]":"main_template"
-            })
+        fetch(API.NAV_API+"?latitude="+31.230378+"&longitude="+121.473658+
+        "&templates[]=main_template&templates[]=favourable_template&templates[]=svip_template")
             .then(response=>{
                 return response.json();
             }).then(json=>{
-                this.setState({navList:json.data});
-                console.log(json.data)
+                this.setState({navList:json[0].entries});
+                console.log(json)
             }).catch(ex=>{
                 console.log('',ex);
             })
 
 
-        //请求的url
-        fetch(API.GETSHOPLIST_API,{
-            latitude:"22.54286",
-            longitude:"114.059563",
-            offset:0,
-            limit:8,
-            extra_filters:"home",
-            rank_id:'',
-            terminal:"h5"
-            })
-            //获得请求的响应对象
-            .then((response)=>{
-                //以json的形式解析请求得到的json数据
-                return response.json();
-            })
-            //请求得到结果，解析完成
-            .then((json)=>{
-                this.setState({channelsData: json.data});
-                console.log(this.channelsData)
-            })
-            .catch((ex)=>{
-                console.log('parsing failed', ex)
-            })
+        
 
 
     
