@@ -7,6 +7,7 @@ export default class Nav extends Component{
     render(){
         return (
 
+<<<<<<< HEAD
 
                     <nav className="content-nav" >
                         <NavLink to="/">
@@ -24,6 +25,13 @@ export default class Nav extends Component{
                             <span className="iconfont icon-wode"></span>
                             <span>我的</span>
                         </NavLink>
+=======
+                    <nav className="content-nav">
+                        <NavLink to="/">首页</NavLink>
+                        <NavLink to="/discover/:title">发现</NavLink>
+                        <NavLink to="/order">订单</NavLink>
+                        <NavLink to="/mine">我的</NavLink>
+>>>>>>> b52fa0ff6a1eb04b0379a801ab8664b21e99715b
                     </nav>
         )
 
