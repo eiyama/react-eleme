@@ -10,9 +10,6 @@ ReactDOM.render(
 );
 
 
-
-
-
 // 在浏览器端开启一个本地服务器，缓存react项目的文件
 // 优化项目的加载速度
 serviceWorker.unregister();
