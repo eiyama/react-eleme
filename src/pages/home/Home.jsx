@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react'
 import API from '../../api'
 import 'whatwg-fetch'
@@ -16,7 +15,7 @@ export default class Home extends Component{
     }
 
     render(){
-        let {channelsData} =this.state;
+        let {navList,channelsData} = this.state;
         return (
             <div className="page" id="home">
                 <div className="wrap">
@@ -28,30 +27,67 @@ export default class Home extends Component{
 
                     {/* 搜索栏 */}
                     <div className="search">
-                        <a className="content">
+                        <div className="content">
                         <i className="iconfont icon-search"></i>
                             <span>搜索饿了么商家、商品名称</span>
-                        </a>
+                        </div>
                     </div>
                     <Filter/>
                     {/* 轮播图nav */}
+                    <div className="nav-container">
+                        <div className="nav-wrap" >
+                            <div className="nav-wrap-item active" >
+                            {
+                                
+                                (function(){
+                                    let lis = [];
+                                    for(var i=0;i<navList.length;i++){
+                                        if(i<10){
+                                            lis.push(<li  key={navList[i].activity_id}>
+                                                        {/* <img src=""/> */}
+                                                        <span className="name" >{navList[i].name}</span>
+                                                    </li>);
+                                        }
+                                    }
+                                    return lis;
+                                })()
+                                
+                            }
+                                
+                            </div>
+                        </div>
+                    </div>
+
                     <nav>
-                  { 
-                    channelsData.map((item)=>{
-                        return (
-                            <li key={item.restaurant.id}>
-                            <span>{item.restaurant.name}</span>
-                            </li>
-                        )
-                    })
-                   
-                  }
-                  </nav>
+                        { 
+                            channelsData.map((item)=>{
+                                return (
+                                    <li key={item.restaurant.id}>
+                                    <span>{item.restaurant.name}</span>
+                                    </li>
+                                )
+                            })
+                        
+                        }
+                    </nav>
+                
                 </div>
             </div>
         )
     }
     componentDidMount(){
+
+        //请求nav轮播图
+        fetch(API.NAV_API+"?latitude="+31.230378+"&longitude="+121.473658+
+        "&templates[]=main_template&templates[]=favourable_template&templates[]=svip_template")
+            .then(response=>{
+                return response.json();
+            }).then(json=>{
+                this.setState({navList:json[0].entries});
+                // console.log(json)
+            }).catch(ex=>{
+                console.log('',ex);
+            })
 
         //请求的url
         fetch(API.GETSHOPLIST_API+"?latitude="+31.230378+"&longitude="+121.473658)
@@ -86,10 +122,5 @@ export default class Home extends Component{
         })
 
 
-
-    
-
     }
-
-
 }

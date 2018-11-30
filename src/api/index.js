@@ -9,8 +9,7 @@
  extra_filters=home&rank_id=
  terminal=h5
 */
-const GETSHOPLIST_API='/restapi/shopping/v3/restaurants'
-
+ const GETSHOPLIST_API='/restapi/shopping/v3/restaurants'
 
 //nav轮播图数据
 /*

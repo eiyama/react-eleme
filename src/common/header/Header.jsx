@@ -12,7 +12,7 @@ export default class Header extends Component{
         }
     }
     render(){
-        let {btn,title} = this.state;
+        let {btn} = this.state;
         return (
             <div className="header">
                   <span className="btn">{btn}</span>
