@@ -19,7 +19,8 @@ export default class Nav extends Component{
                         </NavLink>
                         <NavLink to="/order">
                             <span className="iconfont icon-icon-"></span>
-                            <span>订单</span></NavLink>
+                            <span>订单</span>
+                        </NavLink>
                         <NavLink to="/mine">
                             <span className="iconfont icon-wode"></span>
                             <span>我的</span>
