@@ -12,7 +12,7 @@ export default class Order extends Component{
     render(){
         return (
             <div className="page" id="order">
-                <Header title={this.state.title} />
+                <Header title={this.state.title}/>
             </div>
         )
     }

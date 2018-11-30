@@ -23,9 +23,20 @@ terminal=h5
 */
 const NAV_API = '/restapi/shopping/v2/entries'
 
+/*
+商家推荐的筛选
+     latitude=22.541847
+     longitude=114.071311
+     terminal=h5
+   
+*/
+const FILTER_API = '/pizza/shopping/restaurants/batch_filter'
+
+
 
 
 export default{
   NAV_API,
-  GETSHOPLIST_API
+  GETSHOPLIST_API,
+  FILTER_API
 }

@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import API from '../../api'
 import 'whatwg-fetch'
 import './home.scss'
+import Filter from '../../common/filter/Filter.jsx'
 
 
 export default class Home extends Component{
@@ -32,7 +33,7 @@ export default class Home extends Component{
                             <span>搜索饿了么商家、商品名称</span>
                         </a>
                     </div>
-
+                    <Filter/>
                     {/* 轮播图nav */}
                     <nav>
                   { 
@@ -62,7 +63,7 @@ export default class Home extends Component{
         //请求得到结果，解析完成
         .then((json)=>{
             this.setState({channelsData: json.items});
-            console.log(json.items)
+            // console.log(json.items)
         })
         .catch((ex)=>{
             console.log('parsing failed', ex)
@@ -78,7 +79,7 @@ export default class Home extends Component{
         //请求得到结果，解析完成
         .then((json)=>{
             this.setState({navList: json.items});
-            console.log(json)
+            // console.log(json)
         })
         .catch((ex)=>{
             console.log('parsing failed', ex)
