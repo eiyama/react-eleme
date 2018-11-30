@@ -11,8 +11,12 @@ export default class Home extends Component{
             <div className="page" id="home">
          
                 <div className="wrap">
-                    <h1>首页</h1>
-                
+                    <div className="title">
+                        深圳
+                    </div>
+                    <div className="search">
+                        <input type="text"/>
+                    </div>
                 </div>
             </div>
         )
