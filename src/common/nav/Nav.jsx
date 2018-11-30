@@ -6,16 +6,6 @@ import './Nav.scss'
 export default class Nav extends Component{
     render(){
         return (
-
-<<<<<<< HEAD
-            <nav className="content-nav">
-                <NavLink to="/">首页</NavLink>
-                <NavLink to="/discover">发现</NavLink>
-                <NavLink to="/order">订单</NavLink>
-                <NavLink to="/mine">我的</NavLink>
-            </nav>
-=======
-
                     <nav className="content-nav" >
                         <NavLink to="/">
                             <span className="iconfont icon-eliaomo"></span>
@@ -35,7 +25,7 @@ export default class Nav extends Component{
                         </NavLink>
 
                     </nav>
->>>>>>> 9a0213ae9d992147d1563258fb6dc31e180acc45
+
         )
 
 
