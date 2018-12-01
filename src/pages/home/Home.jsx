@@ -186,9 +186,6 @@ export default class Home extends Component{
                 console.log('parsing failed', ex)
             })
 
-<<<<<<< HEAD
-        
-=======
 
         
         
@@ -198,7 +195,6 @@ export default class Home extends Component{
         var navSwiper = new Swiper ('.nav-container', {
             // loop:true
         })
->>>>>>> 89129e679176cac864831c6a3c0f5b3c0b297284
 
         // banner轮播图
         var bannerSwiper = new Swiper ('.banner', {
