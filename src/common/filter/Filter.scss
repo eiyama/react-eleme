@@ -49,8 +49,37 @@
                 padding-left: 5.333333vw;
                 line-height: 10.666667vw;
             }
-            
-
+        }
+        .bar{
+            width: 100%;
+            background: #fff;
+            height: 400px;
+            dl{
+                width: 100%;
+                overflow: hidden;
+                dt{
+                    margin-left: 1%;
+                    color: #666;
+                    font-size: 14px;
+                }
+                dd{
+                   display: flex;
+                   flex-wrap: wrap;
+                   background: #fff;
+                   position: relative;
+                   color:#333;
+                   li{
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 0 0 31.33%;
+                    height: 9.333333vw;
+                    font-size: .346667rem;
+                    margin: .8vw 1%;
+                    background: #fafafa;
+                   }
+                }
+            }
         }
     }
     .mc{
@@ -60,7 +89,7 @@
         top: 0;
         bottom: 0;
         z-index: -1;
-        background: rgba(0,0,0,.5);
+        background: rgba(0,0,0,.3);
         -webkit-transition: all .3s ease-in-out;
         transition: all .3s ease-in-out;
     }

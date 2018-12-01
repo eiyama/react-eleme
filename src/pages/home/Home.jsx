@@ -26,13 +26,12 @@ export default class Home extends Component{
                     </div>
 
                     {/* 搜索栏 */}
-                    <div className="search">
+                    <div className="search" >
                         <div className="content">
                         <i className="iconfont icon-search"></i>
                             <span>搜索饿了么商家、商品名称</span>
                         </div>
                     </div>
-                    <Filter/>
                     {/* 轮播图nav */}
                     <div className="nav-container">
                         <div className="nav-wrap" >
@@ -57,6 +56,9 @@ export default class Home extends Component{
                             </div>
                         </div>
                     </div>
+                     
+                     {/* 筛选 */}
+                    <Filter/>                    
 
                     <nav>
                         { 
@@ -105,21 +107,7 @@ export default class Home extends Component{
             console.log('parsing failed', ex)
         })
 
-        //轮播图请求
-        fetch(API.NAV_API+"?latitude="+31.230378+"&longitude="+121.473658+"&"+"templates[]=main_template")
-        //获得请求的响应对象
-        .then((response)=>{
-            //以json的形式解析请求得到的json数据
-            return response.json();
-        })
-        //请求得到结果，解析完成
-        .then((json)=>{
-            this.setState({navList: json.items});
-            // console.log(json)
-        })
-        .catch((ex)=>{
-            console.log('parsing failed', ex)
-        })
+        
 
 
     }
