@@ -3,7 +3,10 @@ import API from '../../api'
 import 'whatwg-fetch'
 import './home.scss'
 import Filter from '../../common/filter/Filter.jsx'
+import nav_img from '../../assets/nav.jpg'
 
+import Swiper from 'swiper/dist/js/swiper.js'
+import 'swiper/dist/css/swiper.min.css'
 
 export default class Home extends Component{
     constructor(){
@@ -34,9 +37,9 @@ export default class Home extends Component{
                     </div>
                     <Filter/>
                     {/* 轮播图nav */}
-                    <div className="nav-container">
-                        <div className="nav-wrap" >
-                            <div className="nav-wrap-item active" >
+                    <div className="nav-container swiper-container">
+                        <div className="nav-wrap swiper-wrapper" >
+                            <div className="nav-wrap-item swiper-slide active" >
                             {
                                 
                                 (function(){
@@ -44,17 +47,36 @@ export default class Home extends Component{
                                     for(var i=0;i<navList.length;i++){
                                         if(i<10){
                                             lis.push(<li  key={navList[i].activity_id}>
-                                                        {/* <img src=""/> */}
-                                                        <span className="name" >{navList[i].name}</span>
+                                                        <img className="nav-img" src={nav_img}/>
+                                                        <p className="name" >{navList[i].name}</p>
                                                     </li>);
                                         }
                                     }
                                     return lis;
                                 })()
                                 
-                            }
-                                
+                            }       
                             </div>
+
+                            <div className="nav-wrap-item swiper-slide hidden" >
+                            {
+                                
+                                (function(){
+                                    let lis = [];
+                                    for(var i=0;i<navList.length;i++){
+                                        if(i>10){
+                                            lis.push(<li  key={navList[i].activity_id}>
+                                                        <img className="nav-img" src={nav_img}/>
+                                                        <p className="name" >{navList[i].name}</p>
+                                                    </li>);
+                                        }
+                                    }
+                                    return lis;
+                                })()
+                                
+                            } 
+                            </div>
+                             
                         </div>
                     </div>
 
@@ -92,35 +114,23 @@ export default class Home extends Component{
         //请求的url
         fetch(API.GETSHOPLIST_API+"?latitude="+31.230378+"&longitude="+121.473658)
         //获得请求的响应对象
-        .then((response)=>{
-            //以json的形式解析请求得到的json数据
-            return response.json();
-        })
-        //请求得到结果，解析完成
-        .then((json)=>{
-            this.setState({channelsData: json.items});
-            // console.log(json.items)
-        })
-        .catch((ex)=>{
-            console.log('parsing failed', ex)
-        })
-
-        //轮播图请求
-        fetch(API.NAV_API+"?latitude="+31.230378+"&longitude="+121.473658+"&"+"templates[]=main_template")
-        //获得请求的响应对象
-        .then((response)=>{
-            //以json的形式解析请求得到的json数据
-            return response.json();
-        })
-        //请求得到结果，解析完成
-        .then((json)=>{
-            this.setState({navList: json.items});
-            // console.log(json)
-        })
-        .catch((ex)=>{
-            console.log('parsing failed', ex)
-        })
+            .then((response)=>{
+                //以json的形式解析请求得到的json数据
+                return response.json();
+            })
+            //请求得到结果，解析完成
+            .then((json)=>{
+                this.setState({channelsData: json.items});
+                // console.log(json.items)
+            })
+            .catch((ex)=>{
+                console.log('parsing failed', ex)
+            })
 
 
+        // 导航栏轮播图
+        var navSwiper = new Swiper ('.swiper-container', {
+            // loop:true
+        })
     }
 }
